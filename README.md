@@ -1,0 +1,1 @@
+This code is not to be understood on its own, as it is the code used to generate the plots and results seen in my master thesis. However, information about what is being done in the code is provided through annotations, in case anyone wants to check only the code. Moreover, the optimal way of visualizing the files is Preprocessing.R -> Computations.R -> Modelling.R
