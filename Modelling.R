@@ -341,10 +341,10 @@ pvalue <- array(1, ncol(Categories))
 # We perform the ANOVA for all the categorical variables and store their p-values
 # It takes a while with 500 bootstrap samples, reduce if necessary
 # Seed for replicability
-# set.seed(100)
-# for (i in 1:ncol(Categories)){
-# pvalue[i] = fanova.onefactor(fdata(smooth_func3$fd),Categories[,i], nboot = 500)$pvalue
-# }
+set.seed(100)
+for (i in 1:ncol(Categories)){
+  pvalue[i] = fanova.onefactor(fdata(smooth_func3$fd),Categories[,i], nboot = 500)$pvalue
+}
 print(pvalue)
 
 
