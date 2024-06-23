@@ -152,23 +152,6 @@ PersonVarsfil <- PersonVars[PersonVars$SEQN %in% SEQN, ]
 summary(PersonVarsfil)
 
 
-# An option to fix it
-# SEQN = unique(PersonVarsfil$SEQN)
-# PersonVarsfil2 = PersonVarsfil
-# for (i in SEQN){
-#  test = AllActD[AllActD$SEQN == i, Actcols]
-#  counts = length(test[test == 32767])
-#  if (counts > 100){
-#    PersonVarsfil2 = PersonVarsfil2[!PersonVarsfil2$SEQN == i,]
-#  }
-#  print(i)
-# }
-# summary(PersonVarsfil2)
-
-# Another one
-# PersonVarsfil2 = PersonVarsfil[PersonVarsfil$MeanActDay < 30000*1440,]
-# PersonVarsfil2 = PersonVarsfil2[PersonVarsfil2$MeanActDay > 1*1440,]
-# summary(PersonVarsfil2)
 
 hist(log(PersonVarsfil$MeanActDay + 1))
 
@@ -222,9 +205,9 @@ summary(test)
 test <- PersonVarsfil[is.na(PersonVarsfil$DrinkStatus) == FALSE, ]
 summary(test)
 
-# We see once again a similar behaviour, although this time we have explicit information that only
-# data over 20 years old have been published, and refused or don't know information have been taken as NA as well.
-# Therefore, we just remove this observations as we don't have info to consider people smaller than 20 years old
+# Checking in the documentation, we see that in fact, only data of individuals over 20 years 
+# old has been published, and refused or don't know information have been taken as NA as well. Therefore, 
+# we just remove these observations as we don't have info to consider people smaller than 20 years old
 PersonVarsfil <- PersonVarsfil[is.na(PersonVarsfil$CHF) == FALSE, ]
 PersonVarsfil <- PersonVarsfil[is.na(PersonVarsfil$DrinkStatus) == FALSE, ]
 PersonVarsfil <- PersonVarsfil[is.na(PersonVarsfil$SmokeCigs) == FALSE, ]
