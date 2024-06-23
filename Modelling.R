@@ -83,7 +83,7 @@ plot(pca$scores[, c(1, 2)],
 
 
 
-# We try with the mean of the day for each person
+# We try with the mean of the day for each person (method 3 in the TFM document)
 ActPerson <- readRDS("ActPerson.rds")
 
 # We create the basis
